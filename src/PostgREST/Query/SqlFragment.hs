@@ -487,7 +487,7 @@ explainF fmt opts snip =
 -- | Do a pg set_config(setting, value, true) call. This is equivalent to a SET LOCAL.
 setConfigLocal :: (SQL.Snippet, ByteString) -> SQL.Snippet
 setConfigLocal (k, v) =
-  "set_config(" <> k <> ", " <> unknownEncoder v <> ", true)"
+  "public.set_config(" <> k <> ", " <> unknownEncoder v <> ", true)"
 
 -- | For when the settings are hardcoded and not parameterized
 setConfigWithConstantName :: (SQL.Snippet, ByteString) -> SQL.Snippet
